@@ -79,11 +79,8 @@ with mlflow.start_run():
         param_set = results['params'][i]
         mean_score = results['mean_test_score'][i]
         std_score = results['std_test_score'][i]
-        time.sleep(1)
         # Log each combination as a separate MLflow run
         with mlflow.start_run(nested=True):
-            # wait 1 sec
-            time.sleep(1)
             mlflow.log_params(param_set)
             mlflow.log_metric("mean_test_score", mean_score)
             mlflow.log_metric("std_test_score", std_score)
