@@ -43,7 +43,7 @@ jobs:
       - name: Model Building
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: predictive_maintenance_project/model_building/train.py
+        run: python predictive_maintenance_project/model_building/train.py
 
   deploy-hosting:
     runs-on: ubuntu-latest
